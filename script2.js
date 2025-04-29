@@ -3,6 +3,7 @@ const express = require('express')
 const PORTA = 8000
 
 const server = express()
+server.use(express.json())
 
 function soma (num1, num2){
     return num1+num2
