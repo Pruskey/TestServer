@@ -1,8 +1,12 @@
 const http_a = require('http')
+const url = require('url')
 
 const PORTA = 8000
 
 const server = http_a.createServer( (req, res) => {
+    const {pathname, query} = url.parse(req.url)
+    console.log(pathname)
+    console.log(query)
     const rota = req.url
     if (rota == '/soma'){
         const resultado = somar(1,2)
