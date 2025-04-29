@@ -22,7 +22,7 @@ const server = http_a.createServer( (req, res) => {
         res.end(`Resultado da divisao: ${resultado}`)
     } else {
         const resultado = "invalido"
-        res.end(`Resultado: ${resultado}`)
+        res.statusCode(404).end('Not found')
     }
 } )
 
