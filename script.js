@@ -6,17 +6,20 @@ const server = http_a.createServer( (req, res) => {
     const rota = req.url
     if (rota == '/soma'){
         const resultado = somar(1,2)
+        res.end(`Resultado da soma: ${resultado}`)
     } else if (rota == '/subtrair'){
         const resultado = subtrair(1,2)
+        res.end(`Resultado da subtracao: ${resultado}`)
     } else if (rota == '/multiplicar'){
         const resultado = multiplicar(1,2)
+        res.end(`Resultado da multiplicacao: ${resultado}`)
     } else if (rota == '/dividir'){
         const resultado = dividir(1,2)
+        res.end(`Resultado da divisao: ${resultado}`)
     } else {
-        const resultado = "inválido"
+        const resultado = "invalido"
+        res.end(`Resultado: ${resultado}`)
     }
-    
-    res.end(`O resultado da soma é: ${resultado}`)
 } )
 
 server.listen(PORTA, () => {
